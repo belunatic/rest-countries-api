@@ -42,6 +42,7 @@
 			<div id="filter-div" class="w-1/4">
 				<div
 					class="searchDiv dark px-4 py-4 shadow-md flex items-center rounded-sm">
+					<label for="underline_select" class="sr-only">Filter by Region</label>
 					<select name="continents" id="continents" class="block w-full dark">
 						<option value="">Filter by Region</option>
 						<option value="africa">Africa</option>
@@ -50,6 +51,23 @@
 						<option value="europe">Europe</option>
 						<option value="oceania">Oceania</option>
 					</select>
+				</div>
+			</div>
+		</section>
+		<section class="max-w-[85rem] mx-auto h-full px-8">
+			<div id="resultDiv" class="grid grid-cols-4 gap-x-12 gap-y-16">
+				<div
+					class="country dark flex flex-col gap-y-4 rounded-lg shadow-lg pb-8 overflow-hidden">
+					<img
+						src="https://cdn.britannica.com/20/20-050-33766E25/Flag-Tanzania.jpg"
+						alt=""
+						class="w-full" />
+					<div class="px-6">
+						<p class="font-bold text-lg py-3">Country</p>
+						<p class="text-sm"><span class="font-bold">Population:</span></p>
+						<p class="text-sm"><span class="font-bold">Region:</span></p>
+						<p class="text-sm"><span class="font-bold">Capital:</span></p>
+					</div>
 				</div>
 			</div>
 		</section>
