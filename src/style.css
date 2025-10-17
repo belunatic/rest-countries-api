@@ -9,6 +9,9 @@ body.dark {
 	background: hsl(207, 26%, 17%);
 	color: hsl(0, 0%, 100%);
 }
+.icons.dark {
+	color: hsl(0, 0%, 100%);
+}
 
 header {
 	background: hsl(0, 0%, 98%);
@@ -17,5 +20,9 @@ header {
 
 body {
 	background: hsl(0, 0%, 52%);
+	color: hsl(200, 15%, 8%);
+}
+
+.icons {
 	color: hsl(200, 15%, 8%);
 }
