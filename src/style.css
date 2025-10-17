@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-header.dark {
+header.dark,
+.searchDiv.dark,
+select.dark {
 	background: hsl(209, 23%, 22%);
 	color: hsl(0, 0%, 100%);
 }
@@ -13,7 +15,13 @@ body.dark {
 	color: hsl(0, 0%, 100%);
 }
 
-header {
+.searchDiv.dark .searchInput::placeholder {
+	color: hsl(0, 0%, 100%);
+}
+
+header,
+.searchDiv,
+select {
 	background: hsl(0, 0%, 98%);
 	color: hsl(200, 15%, 8%);
 }
@@ -24,5 +32,9 @@ body {
 }
 
 .icons {
+	color: hsl(200, 15%, 8%);
+}
+
+.searchDiv .searchInput::placeholder {
 	color: hsl(200, 15%, 8%);
 }
