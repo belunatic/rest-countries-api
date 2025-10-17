@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+header.dark {
+	background: hsl(209, 23%, 22%);
+	color: hsl(0, 0%, 100%);
+}
+
+body.dark {
+	background: hsl(207, 26%, 17%);
+	color: hsl(0, 0%, 100%);
+}
+
+header {
+	background: hsl(0, 0%, 98%);
+	color: hsl(200, 15%, 8%);
+}
+
+body {
+	background: hsl(0, 0%, 52%);
+	color: hsl(200, 15%, 8%);
+}
