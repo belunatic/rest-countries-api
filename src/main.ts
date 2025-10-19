@@ -1,5 +1,6 @@
 //DOM
 const resultDiv = document.getElementById("resultDiv") as HTMLDivElement;
+const regionSelect = document.getElementById("regions") as HTMLSelectElement;
 
 interface Flags {
 	png: string;
@@ -20,6 +21,10 @@ interface AllCountries {
 	region: string;
 }
 
+//store the original data
+let allCountries: AllCountries[] = [];
+
+//DOM COntent Loaded
 document.addEventListener("DOMContentLoaded", fetchData);
 
 async function fetchData(): Promise<void> {
@@ -31,18 +36,19 @@ async function fetchData(): Promise<void> {
 			throw new Error("Error fetching data, status: " + res.status);
 		}
 
-		const data = await res.json();
-		console.log(data);
-		const results = displayAllCountries(data).join("");
+		allCountries = await res.json();
+		console.log(allCountries);
+		const results = displayAllCountries(allCountries);
 		resultDiv.innerHTML = results;
 	} catch (error) {
 		console.error(error);
 	}
 }
 
-function displayAllCountries(data: AllCountries[]): string[] {
-	return data.map((item) => {
-		return `<div
+function displayAllCountries(data: AllCountries[]): string {
+	return data
+		.map((item) => {
+			return `<div
 					class="country dark flex flex-col gap-y-4 rounded-lg shadow-lg pb-8 overflow-hidden">
 					
                         <div class="h-48 w-full" style="background:url(${item.flags.png});background-size:cover;background-repeat: no-repeat; 	
@@ -54,5 +60,36 @@ background-position: center; "></div>
 						<p class="text-sm"><span class="font-bold">Capital:</span> ${item.capital[0]}</p>
 					</div>
 				</div>`;
-	});
+		})
+		.join("");
+}
+
+//filter by region
+regionSelect.addEventListener("change", filterByRegion);
+
+function filterByRegion(e: Event): void {
+	//option 1
+	//Narrowing
+	// if (e.target instanceof HTMLSelectElement) {
+	// 	console.log("Region selected:", e.target.value);
+	// }
+
+	//option 2
+	const target = e.target as HTMLSelectElement;
+	const selectedRegion = target.value;
+
+	//filter the countries
+	let filteredCountries: AllCountries[] = [];
+
+	if (!selectedRegion) {
+		filteredCountries = allCountries;
+	} else {
+		filteredCountries = allCountries.filter((item) => {
+			console.log(item.region.toLowerCase());
+			return item.region.toLowerCase() === selectedRegion.toLowerCase();
+		});
+	}
+	console.log(filteredCountries);
+	const results = displayAllCountries(filteredCountries);
+	resultDiv.innerHTML = results;
 }
