@@ -26,7 +26,7 @@
 			id="filter"
 			class="max-w-[85rem] mx-auto flex flex-col md:flex-row justify-between items-center h-[12rem] md:h-[12rem] px-8 py-8 gap-y-4">
 			<div id="search-div" class="w-full md:w-3/4">
-				<form class="md:w-1/2">
+				<form id="searchForm" class="md:w-1/2">
 					<div
 						class="searchDiv dark px-4 py-4 shadow-md flex items-start md:items-center rounded-sm">
 						<ion-icon name="search" class="pr-4 pl-2 size-6"></ion-icon
@@ -36,6 +36,7 @@
 							name="search"
 							id="search"
 							class="searchInput w-full" />
+						<button class="hidden" type="submit"></button>
 					</div>
 				</form>
 			</div>
