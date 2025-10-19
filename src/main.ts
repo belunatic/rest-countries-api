@@ -49,9 +49,9 @@ function displayAllCountries(data: AllCountries[]): string[] {
 background-position: center; "></div>
 					<div class="px-6">
 						<p class="font-bold text-lg py-3">${item.name.official}</p>
-						<p class="text-sm"><span class="font-bold">Population:</span>${item.population}</p>
-						<p class="text-sm"><span class="font-bold">Region:</span>${item.region}</p>
-						<p class="text-sm"><span class="font-bold">Capital:</span>${item.capital[0]}</p>
+						<p class="text-sm"><span class="font-bold">Population:</span> ${item.population}</p>
+						<p class="text-sm"><span class="font-bold">Region:</span> ${item.region}</p>
+						<p class="text-sm"><span class="font-bold">Capital:</span> ${item.capital[0]}</p>
 					</div>
 				</div>`;
 	});
