@@ -45,7 +45,7 @@ function displayAllCountries(data: AllCountries[]): string[] {
 		return `<div
 					class="country dark flex flex-col gap-y-4 rounded-lg shadow-lg pb-8 overflow-hidden">
 					
-                        <div class="h-48  w-full " style="background:url(${item.flags.png});background-size:cover;background-repeat: no-repeat; 	
+                        <div class="h-48 w-full" style="background:url(${item.flags.png});background-size:cover;background-repeat: no-repeat; 	
 background-position: center; "></div>
 					<div class="px-6">
 						<p class="font-bold text-lg py-3">${item.name.official}</p>

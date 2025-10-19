@@ -11,24 +11,24 @@
 		<header class="dark h-[4rem] shadow-md">
 			<div
 				class="max-w-[85rem] mx-auto flex justify-between items-center h-full px-8">
-				<h1 class="text-xl w-3/4">Where in the world?</h1>
-				<div class="flex flex-row w-1/4 justify-end items-center">
+				<h1 class="text-md md:text-xl w-1/2 md:w-3/4">Where in the world?</h1>
+				<div class="flex flex-row w-1/2 md:w-1/4 justify-end items-center">
 					<!-- <img
 						src="./public/moon.svg"
 						alt="mood icon"
 						class="size-6 mr-2 icons dark" /> -->
 					<ion-icon name="moon" class="size-4 mr-2 icons dark"></ion-icon>
-					<span>Dark Mode</span>
+					<span class="text-md md:text-xl">Dark Mode</span>
 				</div>
 			</div>
 		</header>
 		<section
 			id="filter"
-			class="max-w-[85rem] mx-auto flex justify-between items-center h-[8rem] px-8 py-4">
-			<div id="search-div" class="w-3/4">
-				<form class="w-1/2">
+			class="max-w-[85rem] mx-auto flex flex-col md:flex-row justify-between items-center h-[8rem] px-8 py-4 md:m-8 mb-8 gap-y-6">
+			<div id="search-div" class="w-full md:w-3/4">
+				<form class="md:w-1/2">
 					<div
-						class="searchDiv dark px-4 py-4 shadow-md flex items-center rounded-sm">
+						class="searchDiv dark px-4 py-4 shadow-md flex items-start md:items-center rounded-sm">
 						<ion-icon name="search" class="pr-4 pl-2 size-6"></ion-icon
 						><input
 							type="text"
@@ -39,7 +39,7 @@
 					</div>
 				</form>
 			</div>
-			<div id="filter-div" class="w-1/4">
+			<div id="filter-div" class="md:w-1/4 w-3/4 self-start">
 				<div
 					class="searchDiv dark px-4 py-4 shadow-md flex items-center rounded-sm">
 					<label for="underline_select" class="sr-only">Filter by Region</label>
@@ -55,7 +55,9 @@
 			</div>
 		</section>
 		<section class="max-w-[85rem] mx-auto h-full px-8">
-			<div id="resultDiv" class="grid grid-cols-4 gap-x-12 gap-y-16"></div>
+			<div
+				id="resultDiv"
+				class="grid grid-cols-1 md:grid-cols-4 gap-x-12 gap-y-16"></div>
 		</section>
 		<script type="module" src="/src/main.ts"></script>
 		<script
