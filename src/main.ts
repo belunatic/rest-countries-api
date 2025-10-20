@@ -3,6 +3,9 @@ const resultDiv = document.getElementById("resultDiv") as HTMLDivElement;
 const regionSelect = document.getElementById("regions") as HTMLSelectElement;
 const searchForm = document.getElementById("searchForm") as HTMLFormElement;
 const searchInput = document.getElementById("searchInput") as HTMLFormElement;
+const icon = document.getElementById("icon") as HTMLSpanElement;
+// get all element with dark class
+const originalDarkClassElement = document.querySelectorAll(".dark");
 
 interface Flags {
 	png: string;
@@ -115,17 +118,17 @@ function searchCountries(e: Event): void {
 	resultDiv.innerHTML = results;
 }
 
-// const htmlClass = document.getElementsByClassName("dark");
-// for (const item of htmlClass) {
-// 	console.log(item.classList, " This is the ", item);
-// 	item.classList.toggle("dark");
-// }
+icon.addEventListener("click", (e: Event) => {
+	const target = e.target as HTMLElement;
+	//change the Icon
+	if (target.getAttribute("name") === "moon") {
+		target.setAttribute("name", "moon-outline");
+	} else {
+		target.setAttribute("name", "moon");
+	}
 
-const htmlQuery = document.querySelectorAll(".dark");
-htmlQuery.forEach((item) => {
-	console.log(item.classList, " This is the query ", item);
-	item.classList.toggle("dark");
+	originalDarkClassElement.forEach((item) => {
+		console.log(item.classList, " This is the query ", item);
+		item.classList.toggle("dark");
+	});
 });
-
-// console.log(document.getElementsByClassName("dark"));
-// console.log(document.querySelectorAll(".dark"));
