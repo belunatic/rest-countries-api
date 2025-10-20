@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>rest-countries-api</title>
+		<link rel="stylesheet" href="./src/style.css" />
+	</head>
+	<body class="dark">
+		<header class="dark h-[4rem] shadow-md">
+			<div
+				class="max-w-[85rem] mx-auto flex justify-between items-center h-full px-8">
+				<h1 class="text-md md:text-xl w-1/2 md:w-3/4">
+					<a href="/"> Where in the world?</a>
+				</h1>
+				<div class="flex flex-row w-1/2 md:w-1/4 justify-end items-center">
+					<ion-icon
+						id="icon"
+						name="moon"
+						class="size-4 mr-2 icons relative -bottom-[2px] dark cursor-pointer"></ion-icon>
+					<span class="text-md md:text-xl">Dark Mode</span>
+				</div>
+			</div>
+		</header>
+		<section
+			id="filter"
+			class="max-w-[85rem] mx-auto flex flex-col md:flex-row justify-between items-center h-[12rem] md:h-[12rem] px-8 py-8 gap-y-4">
+			<div id="search-div" class="w-full md:w-3/4">
+				<form id="searchForm" class="md:w-1/2">
+					<div
+						class="searchDiv dark px-4 py-4 shadow-md flex items-start md:items-center rounded-sm">
+						<ion-icon name="search" class="pr-4 pl-2 size-6"></ion-icon
+						><input
+							type="text"
+							placeholder="Search for a country..."
+							name="searchInput"
+							id="searchInput"
+							class="searchInput w-full" />
+						<button class="hidden" type="submit"></button>
+					</div>
+				</form>
+			</div>
+			<div id="filter-div" class="md:w-1/4 w-3/4 self-start md:self-center">
+				<div
+					class="searchDiv dark px-4 py-4 shadow-md flex items-center rounded-sm">
+					<label for="underline_select" class="sr-only">Filter by Region</label>
+					<select name="regions" id="regions" class="block w-full dark">
+						<option value="">Filter by Region</option>
+						<option value="africa">Africa</option>
+						<option value="america">America</option>
+						<option value="asia">Asia</option>
+						<option value="europe">Europe</option>
+						<option value="oceania">Oceania</option>
+					</select>
+				</div>
+			</div>
+		</section>
+		<section class="max-w-[85rem] mx-auto h-full px-8">
+			<div id="detailDiv" class="grid grid-cols-1 md:grid-cols-2 gap-x-12">
+				<div>
+					<img
+						src="
+                        https://cdn.britannica.com/20/20-050-33766E25/Flag-Tanzania.jpg"
+						alt="TZ"
+						class="w-full h-auto" />
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2">
+					<h2 class="text-2xl font-bold col-span-2">Belgium</h2>
+					<div id="leftSide">
+						<p><span class="font-bold"> Native Name: </span> Belgie</p>
+						<p><span class="font-bold"> Population: </span> 111,222,564</p>
+						<p><span class="font-bold"> Region: </span> Europe</p>
+						<p><span class="font-bold"> Sub Region: </span> Western Europe</p>
+						<p><span class="font-bold"> Capital: </span> Brussle</p>
+					</div>
+					<div id="rightSide">
+						<p><span class="font-bold"> Top Level Domain: </span> be</p>
+						<p><span class="font-bold"> Currencies: </span> Euro/p></p>
+						<p><span class="font-bold"> Language: </span> Europe</p>
+						<p>
+							<span class="font-bold"> Sub Region: </span> Dutch, French, German
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script type="module" src="/src/main.ts"></script>
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	</body>
+</html>
