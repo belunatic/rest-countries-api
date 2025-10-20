@@ -1,6 +1,8 @@
 //DOM
 const resultDiv = document.getElementById("resultDiv") as HTMLDivElement;
 const regionSelect = document.getElementById("regions") as HTMLSelectElement;
+const searchForm = document.getElementById("searchForm") as HTMLFormElement;
+const searchInput = document.getElementById("searchInput") as HTMLFormElement;
 
 interface Flags {
 	png: string;
@@ -89,7 +91,26 @@ function filterByRegion(e: Event): void {
 			return item.region.toLowerCase() === selectedRegion.toLowerCase();
 		});
 	}
-	console.log(filteredCountries);
+
+	//display filtered
 	const results = displayAllCountries(filteredCountries);
+	resultDiv.innerHTML = results;
+}
+
+//searching
+searchForm.addEventListener("submit", searchCountries);
+
+function searchCountries(e: Event): void {
+	e.preventDefault();
+	//get search term
+	const searchTerm = searchInput.value;
+	console.log(searchTerm);
+	//search the country
+	const searchResult = allCountries.filter((item) =>
+		item.name.official.includes(searchTerm)
+	);
+	//display the searched country
+	console.log(searchResult);
+	const results = displayAllCountries(searchResult);
 	resultDiv.innerHTML = results;
 }
