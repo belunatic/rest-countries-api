@@ -27,7 +27,7 @@ interface AllCountries {
 let allCountries: AllCountries[] = [];
 
 //DOM COntent Loaded
-document.addEventListener("DOMContentLoaded", fetchData);
+// document.addEventListener("DOMContentLoaded", fetchData);
 
 async function fetchData(): Promise<void> {
 	try {
@@ -114,3 +114,18 @@ function searchCountries(e: Event): void {
 	const results = displayAllCountries(searchResult);
 	resultDiv.innerHTML = results;
 }
+
+// const htmlClass = document.getElementsByClassName("dark");
+// for (const item of htmlClass) {
+// 	console.log(item.classList, " This is the ", item);
+// 	item.classList.toggle("dark");
+// }
+
+const htmlQuery = document.querySelectorAll(".dark");
+htmlQuery.forEach((item) => {
+	console.log(item.classList, " This is the query ", item);
+	item.classList.toggle("dark");
+});
+
+// console.log(document.getElementsByClassName("dark"));
+// console.log(document.querySelectorAll(".dark"));
