@@ -30,7 +30,7 @@ interface AllCountries {
 let allCountries: AllCountries[] = [];
 
 //DOM COntent Loaded
-// document.addEventListener("DOMContentLoaded", fetchData);
+document.addEventListener("DOMContentLoaded", fetchData);
 
 async function fetchData(): Promise<void> {
 	try {
@@ -56,10 +56,12 @@ function displayAllCountries(data: AllCountries[]): string {
 			return `<div
 					class="country dark flex flex-col gap-y-4 rounded-lg shadow-lg pb-8 overflow-hidden">
 					
-                        <div class="h-48 w-full" style="background:url(${item.flags.png});background-size:cover;background-repeat: no-repeat; 	
+                        <a href="./src/pages/details.html?name=${item.name.common}">
+							<div class="h-48 w-full cursor-pointer" style="background:url(${item.flags.png});background-size:cover;background-repeat: no-repeat; 	
 background-position: center; "></div>
+</a>
 					<div class="px-6">
-						<p class="font-bold text-lg py-3">${item.name.official}</p>
+						<p class="font-bold text-lg py-3">${item.name.common}</p>
 						<p class="text-sm"><span class="font-bold">Population:</span> ${item.population}</p>
 						<p class="text-sm"><span class="font-bold">Region:</span> ${item.region}</p>
 						<p class="text-sm"><span class="font-bold">Capital:</span> ${item.capital[0]}</p>
