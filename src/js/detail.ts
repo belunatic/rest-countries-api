@@ -40,8 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 			//destructure an array
 			const [data] = await res.json();
-			await fetchBorderCountries(data.borders);
-			console.log(data, data.name, data.borders);
+			const nativeName = getNativeName(data.name.nativeName);
+			const getBorderCountriesArray = await fetchBorderCountries(data.borders);
+			console.log(data, data.name, data.borders, nativeName);
 		} catch (error) {
 			console.error(error);
 		}
@@ -50,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	fetchCountryDetail();
 });
 
-async function fetchBorderCountries(arr: any) {
+async function fetchBorderCountries(arr: Border) {
 	try {
 		const res = await fetch(
 			`https://restcountries.com/v3.1/alpha?codes=${arr.join(",")}`
@@ -65,4 +66,12 @@ async function fetchBorderCountries(arr: any) {
 	} catch (error) {
 		console.error(error);
 	}
+}
+
+function getNativeName(names: any): string {
+	let nativeName: string = "";
+	for (const [key] of Object.entries(names)) {
+		nativeName = names[key].common;
+	}
+	return nativeName;
 }
