@@ -1,6 +1,30 @@
-interface ConutryDetail {
-	name: string;
+interface Flags {
+	png: string;
+	alt: string;
+	svg: string;
 }
+
+interface Name {
+	common: string;
+	official: string;
+	nativeName: unknown;
+}
+
+interface CountryDetail {
+	flags: Flags;
+	name: Name;
+	capital: string[];
+	population: number;
+	region: string;
+	language: unknown;
+	tld: string[];
+	currencies: unknown;
+	subRegion: string;
+}
+
+type Border = {
+	borders: string[];
+};
 
 document.addEventListener("DOMContentLoaded", () => {
 	let params = new URLSearchParams(document.location.search);
