@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 			//destructure an array
 			const [data] = await res.json();
-			console.log(data);
 			//get the border country names
 			const borderCountriesArray = await fetchBorderCountries(data.borders);
 			//display the details

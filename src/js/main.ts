@@ -39,7 +39,6 @@ async function fetchData(): Promise<void> {
 		}
 
 		allCountries = await res.json();
-		console.log(allCountries);
 		const results = displayAllCountries(allCountries);
 		resultDiv.innerHTML = results;
 	} catch (error) {
@@ -89,7 +88,6 @@ function filterByRegion(e: Event): void {
 		filteredCountries = allCountries;
 	} else {
 		filteredCountries = allCountries.filter((item) => {
-			console.log(item.region.toLowerCase());
 			return item.region.toLowerCase() === selectedRegion.toLowerCase();
 		});
 	}
@@ -106,13 +104,11 @@ function searchCountries(e: Event): void {
 	e.preventDefault();
 	//get search term
 	const searchTerm = searchInput.value;
-	console.log(searchTerm);
 	//search the country
 	const searchResult = allCountries.filter((item) =>
 		item.name.official.includes(searchTerm)
 	);
 	//display the searched country
-	console.log(searchResult);
 	const results = displayAllCountries(searchResult);
 	resultDiv.innerHTML = results;
 }
