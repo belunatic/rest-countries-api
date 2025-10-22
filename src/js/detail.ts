@@ -128,7 +128,7 @@ function displayDetails(data: CountryDetail, arr: string[]) {
 							<span class="w-full md:w-auto pb-2">Border Countries:&nbsp;&nbsp;&nbsp;</span>
                             ${arr
 															.map((item) => {
-																return `<a href="./details.html?name=${item}"><span
+																return `<a href="/details.html?name=${item}"><span
                                     class="country ${
 																			currentTheme === "dark" ? "dark" : ""
 																		} mode shadow-md font-normal px-8 py-1 rounded-sm">

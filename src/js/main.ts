@@ -55,9 +55,7 @@ function displayAllCountries(data: AllCountries[]): string {
 						currentTheme === "dark" ? "dark" : ""
 					} mode flex flex-col gap-y-4 rounded-lg shadow-lg pb-8 overflow-hidden">
 					
-                        <a href="./src/pages/details.html?name=${
-													item.name.common
-												}">
+                        <a href="/details.html?name=${item.name.common}">
 							<div class="h-48 w-full cursor-pointer" style="background:url(${
 								item.flags.png
 							});background-size:cover;background-repeat: no-repeat; 	
