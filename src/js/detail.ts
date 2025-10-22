@@ -22,10 +22,6 @@ interface CountryDetail {
 	subRegion: string;
 }
 
-interface Border {
-	borders: string[];
-}
-
 //DOM
 const detailDiv = document.getElementById("detailDiv") as HTMLDivElement;
 
@@ -112,7 +108,7 @@ function displayDetails(data: CountryDetail, arr: string[]) {
 							Border Countries:&nbsp;&nbsp;&nbsp;
                             ${arr
 															.map((item) => {
-																return `<a href="/pages/details.html?name=${item}"><span
+																return `<a href="./details.html?name=${item}"><span
                                     class="country dark shadow-md font-normal px-8 py-1 rounded-sm">
                                     ${item}</span
                                 ></a>`;
