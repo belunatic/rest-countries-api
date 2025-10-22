@@ -51,7 +51,7 @@ function displayAllCountries(data: AllCountries[]): string {
 	return data
 		.map((item) => {
 			return `<div
-					class="country dark flex flex-col gap-y-4 rounded-lg shadow-lg pb-8 overflow-hidden">
+					class="country dark mode flex flex-col gap-y-4 rounded-lg shadow-lg pb-8 overflow-hidden">
 					
                         <a href="./src/pages/details.html?name=${item.name.common}">
 							<div class="h-48 w-full cursor-pointer" style="background:url(${item.flags.png});background-size:cover;background-repeat: no-repeat; 	
