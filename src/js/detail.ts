@@ -1,3 +1,5 @@
+import { currentTheme } from "./utility";
+
 interface Flags {
 	png: string;
 	alt: string;
@@ -127,7 +129,9 @@ function displayDetails(data: CountryDetail, arr: string[]) {
                             ${arr
 															.map((item) => {
 																return `<a href="./details.html?name=${item}"><span
-                                    class="country dark mode shadow-md font-normal px-8 py-1 rounded-sm">
+                                    class="country ${
+																			currentTheme === "dark" ? "dark" : ""
+																		} mode shadow-md font-normal px-8 py-1 rounded-sm">
                                     ${item}</span
                                 ></a>`;
 															})
