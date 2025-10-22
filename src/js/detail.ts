@@ -104,9 +104,9 @@ function displayDetails(data: CountryDetail, arr: string[]) {
 						alt="${data.name.official}"
 						class="w-full h-auto" />
 				</div>
-				<div class="grid grid-cols-1 md:grid-cols-2 content-center gap-y-10">
+				<div class="grid grid-cols-1 md:grid-cols-2 content-center gap-y-10 pt-8 md:pt-0">
 					<h2 class="text-2xl font-bold col-span-2">${data.name.common}</h2>
-					<div id="leftSide">
+					<div id="leftSide" class="col-span-2 md:col-span-1">
 						<p><span class="font-bold"> Native Name: </span> ${getNativeName(
 							data.name.nativeName
 						)}</p>
@@ -115,7 +115,7 @@ function displayDetails(data: CountryDetail, arr: string[]) {
 						<p><span class="font-bold"> Sub Region: </span> ${data.subRegion}</p>
 						<p><span class="font-bold"> Capital: </span> ${data.capital}</p>
 					</div>
-					<div id="rightSide">
+					<div id="rightSide" class="col-span-2 md:col-span-1">
 						<p><span class="font-bold"> Top Level Domain: </span> ${data.tld[0]}</p>
 						<p><span class="font-bold"> Currencies: </span> ${getCurrency(
 							data.currencies
@@ -124,7 +124,7 @@ function displayDetails(data: CountryDetail, arr: string[]) {
 					</div>
 					<div id="leftFooter" class="col-span-2">
 						<p class="font-bold flex flex-wrap gap-x-2 gap-y-2">
-							Border Countries:&nbsp;&nbsp;&nbsp;
+							<span class="w-full md:w-auto pb-2">Border Countries:&nbsp;&nbsp;&nbsp;</span>
                             ${arr
 															.map((item) => {
 																return `<a href="./details.html?name=${item}"><span
