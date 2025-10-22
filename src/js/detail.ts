@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 			//destructure an array
 			const [data] = await res.json();
+			console.log(data);
 			//get the border country names
 			const borderCountriesArray = await fetchBorderCountries(data.borders);
 			//display the details
@@ -71,10 +72,26 @@ async function fetchBorderCountries(arr: string[]) {
 }
 
 //function to return data from the last value of a given object
-function getName(obj: any): string {
+function getNativeName(obj: any): string {
 	let value: string = "";
 	for (const [key] of Object.entries(obj)) {
 		value = obj[key].common;
+	}
+	return value;
+}
+//function to return data from the last value of a given object
+function getCurrency(obj: any): string {
+	let value: string = "";
+	for (const [key] of Object.entries(obj)) {
+		value = obj[key].name;
+	}
+	return value;
+}
+//function to return data from the last value of a given object
+function getLanguage(obj: any): string {
+	let value: string = "";
+	for (const [key] of Object.entries(obj)) {
+		value = obj[key];
 	}
 	return value;
 }
@@ -90,7 +107,7 @@ function displayDetails(data: CountryDetail, arr: string[]) {
 				<div class="grid grid-cols-1 md:grid-cols-2 content-center gap-y-10">
 					<h2 class="text-2xl font-bold col-span-2">${data.name.common}</h2>
 					<div id="leftSide">
-						<p><span class="font-bold"> Native Name: </span> ${getName(
+						<p><span class="font-bold"> Native Name: </span> ${getNativeName(
 							data.name.nativeName
 						)}</p>
 						<p><span class="font-bold"> Population: </span> ${data.population}</p>
@@ -99,9 +116,11 @@ function displayDetails(data: CountryDetail, arr: string[]) {
 						<p><span class="font-bold"> Capital: </span> ${data.capital}</p>
 					</div>
 					<div id="rightSide">
-						<p><span class="font-bold"> Top Level Domain: </span> data.tld[0]}</p>
-						<p><span class="font-bold"> Currencies: </span> ${getName(data.currencies)}</p>
-						<p><span class="font-bold"> Language: </span> ${getName(data.languages)}</p>
+						<p><span class="font-bold"> Top Level Domain: </span> ${data.tld[0]}</p>
+						<p><span class="font-bold"> Currencies: </span> ${getCurrency(
+							data.currencies
+						)}</p>
+						<p><span class="font-bold"> Language: </span> ${getLanguage(data.languages)}</p>
 					</div>
 					<div id="leftFooter" class="col-span-2">
 						<p class="font-bold flex flex-wrap gap-x-2 gap-y-2">
