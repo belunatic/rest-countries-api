@@ -2,7 +2,7 @@
 
 Country Explorer is a lightweight web app designed to help users search, filter, and explore detailed information about countries around the world. Whether you're brushing up on geography, preparing for travel, or just curious about global data, this tool offers a fast and intuitive way to discover countries by name or region. Built for clarity and ease of use, Country Explorer empowers users to interact with global data in a meaningful way.
 
-<!-- **Link to project:** [Country Explorer](#) -->
+**Link to project:** [Country Explorer](https://rest-countries-api-abel.netlify.app/)
 
 ---
 
